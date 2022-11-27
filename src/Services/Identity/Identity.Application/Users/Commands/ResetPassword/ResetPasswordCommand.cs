@@ -8,7 +8,7 @@ namespace sattec.Identity.Application.Users.Commands.ResetPassword
     public record ResetPasswordCommand : IRequest<Result>
     {
         public string Code { get; set; }
-      //  public string Password { get; set; }
+     
         public string NewPassword { get; set; }
     }
     public class ResetPasswordCommandHandler : IRequestHandler<ResetPasswordCommand, Result>
