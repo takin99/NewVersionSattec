@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>sattec.Identity.Infrastructure</RootNamespace>
+        <AssemblyName>sattec.Identity.Infrastructure</AssemblyName>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+        <PackageReference Include="CsvHelper" Version="15.0.10" />
+        <PackageReference Include="F4ST.Common" Version="1.0.38" />
+        <PackageReference Include="FluentAssertions" Version="6.8.0" />
+        <PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="6.0.11" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.11" />
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.11" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.11" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.11" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.11" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.2">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.25.0" />
+        <PackageReference Include="System.Security.Claims" Version="4.3.0" />
+        <PackageReference Include="Twilio" Version="5.81.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Identity.Application\Identity.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Persistence\Configurations\" />
+    </ItemGroup>
+
+</Project>
