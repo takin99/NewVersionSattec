@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using sattec.Identity.Domain.Entities;
+using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace sattec.Identity.Infrastructure.Identity;
 
@@ -37,8 +39,8 @@ public class ApplicationUser : IdentityUser
     /// <summary>
     /// تصویر کارت ملی
     /// </summary>
-
-    //  public IFormFile NationalCardFile { get; set; }
+    [NotMapped]
+    public IFormFile NationalCardFile { get; set; }
     /// <summary>
     /// تلفن ضروری
     /// </summary>
