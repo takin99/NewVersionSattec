@@ -201,7 +201,7 @@ public class IdentityService : IIdentityService
 
         return Result.Success();
     }
-    public async Task<Result> CreateUserIdentityInfo(Guid id, string firstName, string lastName, string fatherName, string nationalId, string identitySerialNumber, DateTime birthday, string birthPlace)
+    public async Task<Result> CreateUserIdentityInfo(Guid id, string firstName, string lastName, string fatherName, string nationalId, string identitySerialNumber, DateTime birthday, string birthPlace, IFormFile nationalCardFile)
     {
         var user = _userManager.Users.Where(x => x.Id == id.ToString()).SingleOrDefault();
 
@@ -217,6 +217,7 @@ public class IdentityService : IIdentityService
                 IdentitySerialNumber = identitySerialNumber,
                 BirthDay = birthday,
                 BirthPlace = birthPlace,
+                NationalCardFile = nationalCardFile
             };
 
             var Result = await _userManager.CreateAsync(newUser);
