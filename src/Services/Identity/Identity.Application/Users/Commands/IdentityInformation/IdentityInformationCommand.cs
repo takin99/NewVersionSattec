@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using sattec.Identity.Application.Common.Interfaces;
 using sattec.Identity.Application.Common.Models;
 
@@ -14,7 +15,7 @@ namespace sattec.Identity.Application.Users.Commands.IdentityInformation
         public string IdentitySerialNumber { get; set; }
         public DateTime BirthDay { get; set; }
         public string BirthPlace { get; set; }
-      //  public IFormFile NationalCardFile { get; set; }
+        public IFormFile NationalCardFile { get; set; }
     }
 
     public class IdentityInformationCommandHandler : IRequestHandler<IdentityInformationCommand, Result>
@@ -38,7 +39,8 @@ namespace sattec.Identity.Application.Users.Commands.IdentityInformation
                 request.NationalId, 
                 request.IdentitySerialNumber, 
                 request.BirthDay,
-                request.BirthPlace
+                request.BirthPlace,
+                request.NationalCardFile
              );
 
             //ToDo fileUpload
