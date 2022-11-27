@@ -41,7 +41,7 @@ public class UserController : ApiControllerBase
         return await Mediator.Send(command);
     }
     [Route("IentityInformation"), HttpPost]
-    public async Task<ActionResult<Result>> IdentityInformation(IdentityInformationCommand command)
+    public async Task<ActionResult<Result>> IdentityInformation([FromForm] IdentityInformationCommand command)
     {
         return await Mediator.Send(command);
     }
