@@ -6,6 +6,10 @@ namespace sattec.Identity.Application.Users.Commands.ResetPassword
     {
         public ResetPasswordCommandValidator()
         {  
+            RuleFor(v => v.Code)
+                .Length(6)
+                .NotEmpty();
+                
             RuleFor(v => v.NewPassword)
                .NotEmpty().WithMessage("Your password cannot be empty")
                .MinimumLength(8).WithMessage("Your password length must be at least 8.")
