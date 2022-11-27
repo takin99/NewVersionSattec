@@ -191,13 +191,7 @@ public class IdentityService : IIdentityService
         if (userTask == null)
             throw new NotFoundException("User not found");
 
-        //   userTask.PasswordHash = newPassword.ToMd5();
-
-        userTask.PasswordHash = BCrypt.Net.BCrypt.HashPassword(newPassword);
-      
-        //  Convert.FromBase64String(userTask.PasswordHash);
-
-        var result = await _userManager.UpdateAsync(userTask);
+        ChangeUserPassword(userTask, newPassword);
 
         return Result.Success();
     }
