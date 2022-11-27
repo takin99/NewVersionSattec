@@ -20,13 +20,13 @@ public class UserController : ApiControllerBase
     {
         return await Mediator.Send(command);
     }
-    [Route("Signin"),HttpPost]
-    public async Task<ActionResult<SigninResponse>> Signin(SigninCommand command)
+    [Route("ConfirmMobile"), HttpPost]
+    public async Task<ActionResult<Result>> ConfirmMobile([FromBody] ConfirmMobileCommand command)
     {
         return await Mediator.Send(command);
     }
-    [Route("ConfirmMobile"), HttpPost]
-    public async Task<ActionResult<Result>> ConfirmMobile([FromBody] ConfirmMobileCommand command)
+    [Route("Signin"),HttpPost]
+    public async Task<ActionResult<SigninResponse>> Signin(SigninCommand command)
     {
         return await Mediator.Send(command);
     }
