@@ -15,7 +15,7 @@ public interface IIdentityService
     Task<Result> DeleteUserAsync(string userId);
     Task<(string token, string userId)> LoginByUserPassAsync(string phoneNumber, string password);
     Task<Result> ResetPassword(string code, string newPassword);
-    Task<Result> CreateUserIdentityInfo(Guid id, string firstName, string lastName, string fatherName, string nationalId, string identitySerialNumber, DateTime birthday, string birthPlace);
+    Task<Result> CreateUserIdentityInfo(Guid id, string firstName, string lastName, string fatherName, string nationalId, string identitySerialNumber, DateTime birthday, string birthPlace, IFormFile NationalCardFile);
     Task<Result> CreateContactInformation(Guid id, string essentialPhone, string phoneNumber, string postalCode, string address, string country, string state, string city, string description);
     Task<Result> createInsuranceInfo(string userId, string name, string InsuranceNumber);
     Result CreateBankInfo(string userId, bool isDefaultAccount, Guid bankId, string title, string accountNo, string cardNo, string iban, string accountName, string description);
